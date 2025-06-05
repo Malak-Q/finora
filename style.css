@@ -1,0 +1,94 @@
+/* Custom CSS for the falling money effect */
+
+/* Ensure body has no default margin and allows for full-height containers */
+body {
+    margin: 0;
+    /* overflow-x is handled in HTML style tag to prevent horizontal scroll */
+}
+
+/* Containers for the falling money on each side */
+.money-container {
+    position: fixed; /* Use fixed to keep them in viewport even on scroll */
+    top: 0;
+    width: 250px; /* Width of the area where money falls on each side */
+    height: 100%; /* Make it span the full height of the viewport */
+    pointer-events: none; /* Allows clicks to pass through the container to content below */
+    overflow: hidden; /* Important: prevents money items from appearing outside this container */
+    z-index: 1; /* Puts the money below your main content */
+}
+
+/* Position the left money container */
+.money-container.left {
+    left: 0;
+}
+
+/* Position the right money container */
+.money-container.right {
+    right: 0;
+}
+
+/* Styling for each individual money item */
+.money-item {
+    position: absolute;
+    width: 50px; /* Width of your money image */
+    height: 25px; /* Height of your money image (adjust aspect ratio if needed) */
+    
+    /* Updated: Using the new money image URL */
+    background-image: url('https://static.vecteezy.com/system/resources/previews/026/867/063/non_2x/pile-of-money-free-png.png'); 
+    
+    background-size: contain; /* Ensures the image fits within the element */
+    background-repeat: no-repeat;
+    opacity: 0.8; /* Slightly transparent */
+    
+    /* Apply the falling animation */
+    animation: fall linear infinite; /* Animation name, timing function, and repetition */
+}
+
+/* Define the falling animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg); /* Start above the screen, no rotation */
+        opacity: 0; /* Start invisible */
+    }
+    10% {
+        opacity: 0.8; /* Quickly become visible */
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg); /* Fall entire viewport height, rotate 2 full turns */
+        opacity: 0; /* Fade out as it leaves the screen */
+    }
+}
+
+/* Modal specific styles (basic for visibility, Tailwind handles most styling) */
+.modal {
+    display: none; /* Hidden by default */
+}
+
+/* Animation for hero section text (example, you can customize) */
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInFromTop 1s ease-out forwards;
+}
+
+/* Style for the close button within the modal */
+.close-button {
+    font-size: 2.5rem; /* Larger 'x' */
+    line-height: 1;
+    cursor: pointer;
+    color: #9ca3af; /* Tailwind gray-400 */
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #4b5563; /* Tailwind gray-700 */
+}

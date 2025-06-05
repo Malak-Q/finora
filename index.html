@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finora - Smart Money Skills</title>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS for specific overrides or non-Tailwind elements (like falling money) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font: Inter (recommended for clean modern designs) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrollbar from money effect */
+        }
+    </style>
+</head>
+<body class="bg-purple-100 text-gray-800">
+
+    <!-- Falling Money Containers (positioned absolutely to cover sides) -->
+    <div class="money-container left"></div>
+    <div class="money-container right"></div>
+
+    <!-- Main content wrapper -->
+    <div id="main" class="relative z-10">
+        <!-- Navbar Section -->
+        <nav class="bg-white shadow-md p-4 flex justify-between items-center fixed w-full top-0 z-50 rounded-b-lg">
+            <div class="flex items-center">
+                <!-- Logo -->
+                <a href="https://ibb.co/8n8C56Sx"><img src="https://i.ibb.co/zWfMRG02/logofinora.png" alt="logofinora" class="h-20 w-auto">
+                </a>
+            </div>
+            <!-- Navigation Menu -->
+            <ul class="flex space-x-6 md:space-x-8">
+                <li><a href="home2.html" class="text-gray-700 hover:text-purple-600 font-medium transition duration-300">Home</a></li>
+                <li><a href="https://www.figma.com/proto/RvRRMSDtOl0eS9OpYOmtvn/test-1?node-id=0-1&t=RNRIyMroKpzyYKmM-1" class="text-gray-700 hover:text-purple-600 font-medium transition duration-300">Products</a></li>
+                <li><a href="about-us.html" class="text-gray-700 hover:text-purple-600 font-medium transition duration-300">About Us</a></li>
+                <li>
+                    <!-- GET STARTED Button (triggers modal or external link) -->
+                    <a id="loginBtn" href="#" class="bg-purple-600 text-white px-5 py-2 rounded-full hover:bg-purple-600 transition duration-300 shadow-lg">GET STARTED</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white py-24 md:py-32 mt-16 overflow-hidden rounded-b-xl shadow-xl">
+            <!-- Background Image Overlay -->
+            <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://img.freepik.com/premium-vector/silhouette-profile-group-men-women-diverse-culture-diversity-equality-inclusion-deib-multicultural-crowd-people_175061-1202.jpg');"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <p id="welcomeMessage" class="text-lg mb-4 opacity-90">Unlock your financial potential with Finora.</p>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                    Ignite Your Financial Confidence: Designed for MENA Women.
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95"><b class="font-semibold">
+                    Finora is your dedicated platform, built by women, for women.
+                </p></b>
+                <p class="text-lg mb-8">
+                    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95"><span id="role">Ready to take control? Join our community.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="Parents.html" class="order-button bg-white text-purple-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">Log In</a>
+                    <a href="Teen.html" class="order-button bg-white text-purple-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">Sign Up</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Us Section -->
+        <section class="py-16 md:py-24 bg-white rounded-xl shadow-lg mx-auto my-12 max-w-6xl px-6">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-12">
+                <div class="text-center md:text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-purple-600">
+                        About Finora!
+                    </h2>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-8">
+                        Finora is a hyper-personalized, gamified, and community-driven financial literacy platform created by women, for women in the MENA region. We are on a mission to close the financial confidence gap by offering engaging, culturally relevant education and real-world tools that empower women to take
+charge of their financial futures. Our approach blends AI-powered learning paths, bite-sized lessons, and local money stories with interactive challenges, rewards, and a supportive community—making financial empowerment accessible, fun, and truly transformative for every woman, at every stage of life.
+                    </p>
+                    <a href="learn.html" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-600 transition duration-300 shadow-md">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-16 md:py-24 bg-gray-100 rounded-xl shadow-lg mx-auto my-12 max-w-6xl px-6">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-600">Our Features</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature Box 1 - Made Clickable -->
+                    <a href="https://form.typeform.com/to/Ommw5UJf" class="block group">
+                        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 text-center relative min-h-[320px] flex flex-col justify-between">
+                            <div class="flex justify-center mb-6">
+                                <img src="https://cdn-icons-png.freepik.com/512/3874/3874176.png" class="w-20 h-20 rounded-full object-cover" alt="Feature Icon 1">
+                            </div>
+                            <h5 class="text-xl font-semibold mb-3 text-purple-600 group-hover:text-purple-600 transition duration-300">
+                                🎯 AI-Powered Personality Quiz
+                            </h5>
+                            <p class="text-gray-600 flex-grow">
+                                Users take a quiz to get a financial profile and personalized content.
+                            </p>
+                            <span class="absolute inset-0 z-10"></span>
+                        </div>
+                    </a>
+                    <!-- Feature Box 2 - Made Clickable -->
+                    <a href="https://www.figma.com/proto/RvRRMSDtOl0eS9OpYOmtvn/test-1?node-id=0-1&t=RNRIyMroKpzyYKmM-1" class="block group">
+                        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 text-center relative min-h-[320px] flex flex-col justify-between">
+                            <div class="flex justify-center mb-6">
+                                <img src="https://cdn-icons-png.freepik.com/512/316/316335.png" class="w-20 h-20 rounded-full object-cover" alt="Feature Icon 2">
+                            </div>
+                            <h5 class="text-xl font-semibold mb-3 text-purple-600 group-hover:text-purple-600 transition duration-300">
+                                🏆 Gamified Learning Modules
+                            </h5>
+                            <p class="text-gray-600 flex-grow">
+                                Lessons are turned into fun games like simulations and quests.
+                            </p>
+                            <span class="absolute inset-0 z-10"></span>
+                        </div>
+                    </a>
+                    <!-- Feature Box 3 - Made Clickable -->
+                    <a href="https://www.figma.com/proto/RvRRMSDtOl0eS9OpYOmtvn/test-1?node-id=0-1&t=RNRIyMroKpzyYKmM-1" class="block group">
+                        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 text-center relative min-h-[320px] flex flex-col justify-between">
+                            <div class="flex justify-center mb-6">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1724/1724950.png" class="w-20 h-20 rounded-full object-cover" alt="Feature Icon 3">
+                            </div>
+                            <h5 class="text-xl font-semibold mb-3 text-purple-600 group-hover:text-purple-600 transition duration-300">
+                                💬 Community Badges & Leaderboards
+                            </h5>
+                            <p class="text-gray-600 flex-grow">
+                                Users earn badges and compete on leaderboards to stay motivated.
+                            </p>
+                            <span class="absolute inset-0 z-10"></span>
+                        </div>
+                    </a>
+                    <!-- Feature Box 4 - Made Clickable -->
+                    <a href="https://share.chatling.ai/s/Q7g5n3bJb6d1Y42" class="block group">
+                        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 text-center relative min-h-[320px] flex flex-col justify-between">
+                            <div class="flex justify-center mb-6">
+                                <img src="https://cdn-icons-png.freepik.com/512/2128/2128445.png" class="w-20 h-20 rounded-full object-cover" alt="Feature Icon 4">
+                            </div>
+                            <h5 class="text-xl font-semibold mb-3 text-purple-600 group-hover:text-purple-600 transition duration-300">
+                                🔍 Hyper-Personalized Recommendations
+                            </h5>
+                            <p class="text-gray-600 flex-grow">
+                                AI suggests content based on user behavior and interests.
+                            </p>
+                            <span class="absolute inset-0 z-10"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="ed.html" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-600 transition duration-300 shadow-md">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Game Section -->
+        <section class="py-16 md:py-24 bg-white rounded-xl shadow-lg mx-auto my-12 max-w-6xl px-6">
+            <div class="container mx-auto flex flex-col md:flex-row-reverse items-center justify-between space-y-10 md:space-y-0 md:space-x-12">
+                <div class="text-center md:text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-purple-600">
+                        Our Mission
+                    </h2>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-8">
+                        Our mission is to empower MENA women to achieve financial confidence and independence—now. We deliver accessible, actionable, and culturally tailored financial education, combining innovative technology with real-world impact. By partnering with local experts, institutions, and women-led businesses, we ensure our platform reflects the unique needs and values of our community. Finora is committed to measurable change: helping women save more, invest smarter, and build brighter financial futures for themselves and their families.
+                    </p>
+                    <a href="ed.html" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-600 transition duration-300 shadow-md">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-200 my-12 max-w-6xl mx-auto">
+
+        <!-- Sign In Modal (hidden by default, controlled by JavaScript) -->
+        <div id="loginModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 hidden p-4">
+            <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md relative">
+                <span class="close-button absolute top-4 right-4 text-gray-500 text-3xl cursor-pointer hover:text-gray-800">&times;</span>
+                <h2 class="text-2xl font-bold mb-6 text-center text-purple-600">Register your details</h2>
+                <form id="loginForm" class="space-y-4">
+                    <div>
+                        <label for="firstName" class="block text-gray-700 text-sm font-medium mb-2">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="lastName" class="block text-gray-700 text-sm font-medium mb-2">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus-ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="mobile" class="block text-gray-700 text-sm font-medium mb-2">Mobile No</label>
+                        <input type="text" id="mobile" name="mobile" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2">E-mail</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-md font-semibold hover:bg-purple-600 transition duration-300 shadow-md">Register</button>
+                    <div class="message error text-red-600 text-center mt-4" id="errorMessage"></div>
+                    <div class="message success text-green-600 text-center mt-4" id="successMessage"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Subscription Section -->
+        <section id="contact" class="bg-purple-600 text-white py-16 md:py-24 rounded-xl shadow-lg mx-auto my-12 max-w-6xl px-6">
+            <div class="container mx-auto text-center">
+                <div class="mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Ready to Take Control of Your Financial Future?
+                    </h2>
+                    <p class="text-lg opacity-90 max-w-2xl mx-auto">
+                        Finora offers tailored resources, expert guidance, and a supportive community designed to empower MENA women on their journey to financial mastery. Join us for exclusive insights and updates.
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-full max-w-lg">
+                        <form action="#" class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <input type="email" class="subscription-input-form flex-grow px-6 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 placeholder-gray-500" placeholder="Enter your email here">
+                            <button type="submit" class="appsLand-btn subscribe-btn bg-yellow-400 text-blue-800 px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 shadow-md">
+                                Unlock Your Potential
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="bg-gray-800 text-white py-10 md:py-16 rounded-t-xl shadow-inner">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Social Icons -->
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="hover:opacity-80 transition duration-300">
+                        <img src="https://static-00.iconduck.com/assets.00/facebook-square-icon-511x512-9dz42ub9.png" alt="Facebook" class="h-8 w-8">
+                    </a>
+                    <a href="#" class="hover:opacity-80 transition duration-300">
+                        <img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-instagram-new-square2-512.png" alt="Instagram" class="h-8 w-8">
+                    </a>
+                    <a href="#" class="hover:opacity-80 transition duration-300">
+                        <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg" alt="Twitter" class="h-8 w-8">
+                    </a>
+                    <a href="#" class="hover:opacity-80 transition duration-300">
+                        <img src="https://thumbs.dreamstime.com/b/tiktok-social-media-app-icon-tiktok-social-media-app-icon-square-shape-vector-illustration-269930887.jpg" alt="TikTok" class="h-8 w-8">
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="hover:opacity-80 transition duration-300">
+                        <img src="https://static-00.iconduck.com/assets.00/youtube-square-icon-2048x2048-w20ynumq.png" alt="YouTube" class="h-8 w-8">
+                    </a>
+                </div>
+
+                <!-- Footer Navigation -->
+                <div class="flex flex-wrap justify-center space-x-4 md:space-x-8 text-lg font-medium mb-8">
+                    <a href="home2.html" class="text-gray-300 hover:text-white transition duration-300">Home</a>
+                    <a href="https://www.figma.com/proto/RvRRMSDtOl0eS9OpYOmtvn/test-1?node-id=0-1&t=RNRIyMroKpzyYKmM-1" class="text-gray-300 hover:text-white transition duration-300">Products</a>
+                    <a href="about-us.html" class="text-gray-300 hover:text-white transition duration-300">About Us</a>
+                    <a href="learn.html" class="text-gray-300 hover:text-white transition duration-300">Learn More</a>
+                </div>
+
+                <p class="text-gray-400 text-sm">&copy; 2025 Finora. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Chatbot Wrapper (holds header and iframe) -->
+    <div id="chatbotWrapper" class="fixed bottom-4 right-4 z-50 w-80 rounded-lg shadow-xl border border-gray-300 overflow-hidden">
+        <!-- Chatbot Header with Minimize Button -->
+        <div class="bg-purple-600 text-white p-2 flex justify-between items-center rounded-t-lg">
+            <span class="font-semibold text-sm">Chat with Finora AI</span>
+            <button id="minimizeChatbotBtn" class="text-white text-xl leading-none px-2 py-0.5 rounded-full hover:bg-purple-600 transition duration-200">
+                — <!-- Minus sign for minimize -->
+            </button>
+        </div>
+        <!-- Chatbot Iframe -->
+        <iframe id="chatbotIframe" src="https://share.chatling.ai/s/Q7g5n3bJb6d1Y42" 
+                class="w-full h-96"
+                frameborder="0"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- JavaScript for falling money and modal functionality -->
+    <script src="script.js"></script>
+
+</body>
+</html>
